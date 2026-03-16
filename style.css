@@ -278,3 +278,88 @@ margin-bottom:8px;
 text-align:center;
 margin-top:20px;
 }
+
+/* SECTION TITLES */
+
+.section-title{
+color:#0077ff;
+font-size:24px;
+margin-bottom:15px;
+font-weight:700;
+}
+
+/* BENEFITS */
+
+.benefits-list{
+list-style:none;
+}
+
+.benefits-list li{
+font-weight:600;
+margin-bottom:12px;
+font-size:16px;
+}
+
+.benefit-icon{
+margin-right:8px;
+color:#0077ff;
+}
+
+/* CITIES */
+
+.cities-list{
+list-style:none;
+}
+
+.cities-list li{
+font-weight:600;
+margin-bottom:10px;
+font-size:16px;
+}
+
+/* TRUST */
+
+.trust-items p{
+margin-bottom:10px;
+font-size:16px;
+}
+
+/* FOOTER */
+
+.footer{
+background:#111;
+color:white;
+padding:60px 8%;
+}
+
+.footer-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+}
+
+.footer h3,
+.footer h4{
+margin-bottom:12px;
+color:#00a6ff;
+}
+
+.footer a{
+color:#ccc;
+text-decoration:none;
+display:block;
+margin-bottom:8px;
+}
+
+.footer a:hover{
+color:white;
+}
+
+.copyright{
+text-align:center;
+margin-top:25px;
+border-top:1px solid #333;
+padding-top:15px;
+}
