@@ -22,8 +22,6 @@ document.getElementById("estimateResult")
 
 }
 
-/* WhatsApp Booking */
-
 document
 .getElementById("bookingForm")
 .addEventListener("submit",function(e){
@@ -59,7 +57,7 @@ window.open(whatsapp,"_blank");
 });
 
 
-/* HERO IMAGE SLIDER */
+/* HERO SLIDER */
 
 let slides = document.querySelectorAll(".slide");
 
