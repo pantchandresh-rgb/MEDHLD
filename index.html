@@ -13,7 +13,7 @@
 
 <body>
 
-<!-- NAVBAR -->
+<!-- HEADER -->
 
 <header class="navbar">
 
@@ -48,16 +48,26 @@
 <li>Certified Nurses</li>
 <li>Injection & IV Drip at Home</li>
 <li>Blood Test & ECG</li>
-<li>Physiotherapy</li>
+<li>Physiotherapy at Home</li>
+<li>BP & Sugar Check</li>
 </ul>
 
 <a href="#booking" class="btn-primary">Book Your Service</a>
 
 </div>
 
+
 <div class="hero-right">
 
-<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef" alt="Healthcare">
+<div class="hero-slider">
+
+<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef" class="slide active">
+
+<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5" class="slide">
+
+<img src="https://images.unsplash.com/photo-1584515933487-779824d29309" class="slide">
+
+</div>
 
 </div>
 
@@ -75,60 +85,55 @@
 <div class="service-card">
 <h3>Injection at Home</h3>
 <p>Safe injection administration at home.</p>
-
 <div class="card-buttons">
 <span class="price-btn">₹299</span>
 <a href="#booking" class="book-btn">Book Now</a>
 </div>
-
 </div>
-
 
 <div class="service-card">
 <h3>ECG Test</h3>
 <p>Portable ECG testing service.</p>
-
 <div class="card-buttons">
 <span class="price-btn">₹999</span>
 <a href="#booking" class="book-btn">Book Now</a>
 </div>
-
 </div>
-
 
 <div class="service-card">
 <h3>IV Drip</h3>
 <p>Professional IV drip care.</p>
-
 <div class="card-buttons">
 <span class="price-btn">₹1499</span>
 <a href="#booking" class="book-btn">Book Now</a>
 </div>
-
 </div>
-
 
 <div class="service-card">
 <h3>Nurse Visit</h3>
 <p>Home nurse visit for patient care.</p>
-
 <div class="card-buttons">
 <span class="price-btn">₹699</span>
 <a href="#booking" class="book-btn">Book Now</a>
 </div>
-
 </div>
-
 
 <div class="service-card">
-<h3>Blood Test</h3>
-<p>Home sample collection.</p>
-
+<h3>Physiotherapy</h3>
+<p>Professional physiotherapy session at home.</p>
 <div class="card-buttons">
-<span class="price-btn">₹399</span>
+<span class="price-btn">₹799</span>
 <a href="#booking" class="book-btn">Book Now</a>
 </div>
+</div>
 
+<div class="service-card">
+<h3>BP / Sugar Check</h3>
+<p>Blood pressure & sugar check at home.</p>
+<div class="card-buttons">
+<span class="price-btn">₹199</span>
+<a href="#booking" class="book-btn">Book Now</a>
+</div>
 </div>
 
 </div>
@@ -136,7 +141,7 @@
 </section>
 
 
-<!-- PRICE ESTIMATOR -->
+<!-- PRICING -->
 
 <section class="pricing" id="pricing">
 
@@ -165,7 +170,7 @@
 </section>
 
 
-<!-- BOOKING FORM -->
+<!-- BOOKING -->
 
 <section class="booking" id="booking">
 
@@ -182,6 +187,8 @@
 <option>Injection</option>
 <option>ECG</option>
 <option>IV Drip</option>
+<option>Physiotherapy</option>
+<option>BP/Sugar Check</option>
 </select>
 
 <input type="date" id="date" required>
@@ -200,14 +207,13 @@
 <p>© 2026 HomeCare Health</p>
 
 <div class="footer-links">
-
 <a href="#">Terms & Conditions</a>
 <a href="#">Privacy Policy</a>
 <a href="#">Disclaimer</a>
-
 </div>
 
 </footer>
+
 
 <script src="script.js"></script>
 
