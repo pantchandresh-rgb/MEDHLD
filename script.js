@@ -57,10 +57,12 @@ window.open(whatsapp,"_blank");
 });
 
 
-/* HERO SLIDER */
+
+/* HERO IMAGE SLIDER */
+
+document.addEventListener("DOMContentLoaded", function(){
 
 let slides = document.querySelectorAll(".slide");
-
 let index = 0;
 
 function nextSlide(){
@@ -73,4 +75,6 @@ slides[index].classList.add("active");
 
 }
 
-setInterval(nextSlide,4000);
+setInterval(nextSlide, 4000);
+
+});
