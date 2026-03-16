@@ -197,60 +197,193 @@ padding:30px;
 border-radius:10px;
 }
 
-/* PRICING */
+
+/* PRICING SECTION */
 
 .pricing-wrapper{
 display:flex;
-gap:60px;
-align-items:center;
-justify-content:center;
+justify-content:space-between;
+align-items:stretch;
+gap:40px;
 padding:80px 8%;
+flex-wrap:wrap;
+}
+
+.pricing-benefits{
+flex:1;
+min-width:280px;
+background:#f5f8ff;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.pricing-benefits h3{
+color:#0077ff;
+margin-bottom:15px;
+font-size:24px;
 }
 
 .pricing-benefits ul{
 list-style:none;
-line-height:1.9;
 }
 
-/* BOOKING */
+.pricing-benefits li{
+font-size:16px;
+font-weight:600;
+margin-bottom:10px;
+color:#333;
+}
+
+.price-box{
+flex:1;
+min-width:300px;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.price-box h2{
+margin-bottom:20px;
+color:#0077ff;
+}
+
+.price-box select{
+width:100%;
+padding:10px;
+margin-bottom:10px;
+border-radius:6px;
+border:1px solid #ddd;
+}
+
+.price-box button{
+width:100%;
+padding:12px;
+background:#0077ff;
+color:white;
+border:none;
+border-radius:8px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+
+/* BOOKING SECTION */
 
 .booking-wrapper{
 display:flex;
-gap:50px;
 justify-content:center;
-align-items:flex-start;
+gap:40px;
 padding:80px 8%;
+flex-wrap:wrap;
 }
 
-#bookingForm{
-display:flex;
-flex-direction:column;
-gap:12px;
-width:320px;
+.cities{
+background:#f5f8ff;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+min-width:220px;
 }
 
-#bookingForm button{
-background:#25D366;
-color:white;
-padding:14px;
+.cities h3{
+color:#0077ff;
+margin-bottom:15px;
+}
+
+.cities ul{
+list-style:none;
+}
+
+.cities li{
+font-weight:bold;
+margin-bottom:10px;
+color:#333;
 font-size:16px;
-border:none;
+}
+
+.trust-box{
+background:#fff3f3;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+min-width:220px;
+}
+
+.trust-box h3{
+color:#e63946;
+margin-bottom:15px;
+}
+
+.trust-box p{
+font-weight:bold;
+margin-bottom:8px;
+font-size:15px;
+}
+
+
+.cta{
+background:linear-gradient(90deg,#0077ff,#00a6ff);
+color:white;
+text-align:center;
+padding:70px 20px;
+}
+
+.cta h2{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.cta-btn{
+display:inline-block;
+margin-top:20px;
+background:white;
+color:#0077ff;
+padding:12px 30px;
 border-radius:8px;
 font-weight:bold;
+text-decoration:none;
 }
+
+
 
 /* FOOTER */
 
 .footer{
 background:#111;
 color:white;
-text-align:center;
-padding:30px;
-margin-top:50px;
+padding:60px 8%;
 }
 
-.footer-links a{
+.footer-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+margin-bottom:30px;
+}
+
+.footer h3,
+.footer h4{
+margin-bottom:15px;
+color:#00a6ff;
+}
+
+.footer a{
+display:block;
 color:#ccc;
-margin:0 10px;
+margin-bottom:8px;
 text-decoration:none;
+}
+
+.footer a:hover{
+color:white;
+}
+
+.copyright{
+text-align:center;
+border-top:1px solid #333;
+padding-top:15px;
+color:#aaa;
 }
