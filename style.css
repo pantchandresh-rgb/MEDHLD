@@ -1,50 +1,31 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
-
 body{
-background:#f4f7fb;
+font-family:Arial;
+margin:0;
+background:#f8fbff;
 }
 
-.navbar{
-background:linear-gradient(90deg,#0077ff,#00a6ff);
-padding:18px 8%;
-color:white;
-}
-
-.nav-container{
+.header{
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:15px 8%;
+background:linear-gradient(90deg,#0077ff,#00a6ff);
+color:white;
 }
 
-.logo{
-font-size:22px;
-font-weight:800;
-}
-
-.nav-links{
-display:flex;
-gap:25px;
-list-style:none;
-}
-
-.nav-links a{
+.nav a{
+margin:0 15px;
 color:white;
 text-decoration:none;
-font-weight:bold;
+font-weight:600;
 }
 
-.btn-primary{
+.header-btn{
 background:white;
 color:#0077ff;
-padding:10px 20px;
+padding:10px 18px;
 border-radius:6px;
 text-decoration:none;
-font-weight:bold;
 }
 
 .hero{
@@ -52,204 +33,139 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 padding:80px 8%;
-background:#eaf3ff;
-gap:40px;
+background:#eef6ff;
 }
 
-.hero-left{
-flex:1;
-}
-
-.hero-left h1{
+.hero-content h1{
 font-size:40px;
-margin-bottom:20px;
+color:#0077ff;
 }
 
-.hero-left ul{
-list-style:none;
-margin-bottom:20px;
-}
-
-.hero-left li{
-font-weight:bold;
-margin-bottom:8px;
-}
-
-.hero-right{
-flex:1.2;
-}
-
-.hero-slider{
-position:relative;
-height:420px;
-overflow:hidden;
-border-radius:10px;
+.hero-btn{
+background:#0077ff;
+color:white;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
 }
 
 .hero-slider img{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:0;
-transition:opacity 1s;
+width:400px;
+border-radius:10px;
+margin-left:10px;
 }
 
-.hero-slider img.active{
-opacity:1;
-}
-
-.how-it-works{
+.services-section{
 padding:80px 8%;
 text-align:center;
-background:white;
 }
 
-.steps{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-.step-card{
-background:#f5f8ff;
-padding:30px;
-border-radius:12px;
-}
-
-.step-number{
-background:#0077ff;
-color:white;
-width:40px;
-height:40px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-margin:0 auto 10px;
-}
-
-.services{
-padding:80px 8%;
+.section-heading{
+font-size:32px;
+color:#0077ff;
+margin-bottom:40px;
 }
 
 .services-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .service-card{
 background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
-.card-buttons{
-display:flex;
-justify-content:space-between;
-margin-top:20px;
-}
-
-.price-btn{
-background:#eef4ff;
-padding:6px 14px;
-border-radius:6px;
+.service-price{
+font-size:20px;
+color:#0077ff;
 font-weight:bold;
 }
 
-.book-btn{
+.service-btn{
+display:inline-block;
+margin-top:10px;
 background:#0077ff;
 color:white;
-padding:6px 14px;
+padding:10px 20px;
 border-radius:6px;
 text-decoration:none;
 }
 
-.reviews{
+.pricing-section{
 padding:80px 8%;
-background:#f7f9ff;
-text-align:center;
-}
-
-.review-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-.review-card{
-background:white;
-padding:30px;
-border-radius:10px;
+background:#f1f7ff;
 }
 
 .pricing-wrapper{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-padding:80px 8%;
-max-width:1200px;
-margin:auto;
+grid-template-columns:1fr 1fr 1fr;
+gap:30px;
 }
 
-.pricing-benefits{
-background:#f5f8ff;
-padding:30px;
-border-radius:12px;
+.booking-form form{
+display:flex;
+flex-direction:column;
+gap:10px;
 }
 
-.price-box{
-background:white;
-padding:30px;
-border-radius:12px;
+.booking-form input,
+.booking-form select{
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
 }
 
-.price-box select,
-.price-box button{
-width:100%;
+.whatsapp-btn{
+background:#25D366;
+color:white;
+padding:12px;
+border:none;
+border-radius:6px;
+font-weight:bold;
+}
+
+.price-estimator select{
 padding:10px;
 margin-bottom:10px;
 }
 
-.booking-section{
-padding:80px 8%;
-background:#f8fbff;
-}
-
-.booking-wrapper{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:40px;
-max-width:1200px;
-margin:auto;
-}
-
-#bookingForm{
-background:white;
-padding:30px;
-border-radius:10px;
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-
-#bookingForm input,
-#bookingForm select{
+.calc-btn{
+background:#0077ff;
+color:white;
 padding:10px;
-border:1px solid #ddd;
+border:none;
 border-radius:6px;
 }
 
-#bookingForm button{
-background:#25D366;
+.cities{
+padding:70px 8%;
+text-align:center;
+}
+
+.cities-grid{
+display:flex;
+justify-content:center;
+gap:20px;
+font-weight:bold;
+}
+
+.cta-banner{
+background:linear-gradient(90deg,#0077ff,#00a6ff);
 color:white;
-padding:14px;
-border:none;
+text-align:center;
+padding:60px;
+}
+
+.cta-btn{
+background:white;
+color:#0077ff;
+padding:14px 30px;
 border-radius:8px;
+text-decoration:none;
 font-weight:bold;
 }
 
@@ -259,107 +175,15 @@ color:white;
 padding:60px 8%;
 }
 
-.footer-container{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:40px;
-}
-
-.footer a{
-color:#ccc;
-text-decoration:none;
-display:block;
-margin-bottom:8px;
-}
-
-.copyright{
-text-align:center;
-margin-top:20px;
-}
-
-/* SECTION TITLES */
-
-.section-title{
-color:#0077ff;
-font-size:24px;
-margin-bottom:15px;
-font-weight:700;
-}
-
-/* BENEFITS */
-
-.benefits-list{
-list-style:none;
-}
-
-.benefits-list li{
-font-weight:600;
-margin-bottom:12px;
-font-size:16px;
-}
-
-.benefit-icon{
-margin-right:8px;
-color:#0077ff;
-}
-
-/* CITIES */
-
-.cities-list{
-list-style:none;
-}
-
-.cities-list li{
-font-weight:600;
-margin-bottom:10px;
-font-size:16px;
-}
-
-/* TRUST */
-
-.trust-items p{
-margin-bottom:10px;
-font-size:16px;
-}
-
-/* FOOTER */
-
-.footer{
-background:#111;
-color:white;
-padding:60px 8%;
-}
-
-.footer-container{
-max-width:1200px;
-margin:auto;
+.footer-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:40px;
 }
 
-.footer h3,
-.footer h4{
-margin-bottom:12px;
-color:#00a6ff;
-}
-
 .footer a{
 color:#ccc;
-text-decoration:none;
 display:block;
-margin-bottom:8px;
-}
-
-.footer a:hover{
-color:white;
-}
-
-.copyright{
-text-align:center;
-margin-top:25px;
-border-top:1px solid #333;
-padding-top:15px;
+margin-bottom:6px;
+text-decoration:none;
 }
