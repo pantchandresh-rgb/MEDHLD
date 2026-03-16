@@ -1,46 +1,30 @@
 function calculatePrice(){
 
-const service =
-Number(document.getElementById("estService").value);
+const service = Number(document.getElementById("estService").value);
 
-const urgency =
-Number(document.getElementById("urgency").value);
+const urgency = Number(document.getElementById("urgency").value);
 
 if(!service){
-
-document.getElementById("estimateResult")
-.innerText="Please select a service";
-
+document.getElementById("estimateResult").innerText="Please select a service";
 return;
-
 }
 
 const price = service * urgency;
 
-document.getElementById("estimateResult")
-.innerText="Estimated Price: ₹"+price;
+document.getElementById("estimateResult").innerText="Estimated Price: ₹"+price;
 
 }
 
-document
-.getElementById("bookingForm")
-.addEventListener("submit",function(e){
+document.getElementById("bookingForm").addEventListener("submit",function(e){
 
 e.preventDefault();
 
-const name =
-document.getElementById("name").value;
+const name=document.getElementById("name").value;
+const phone=document.getElementById("phone").value;
+const service=document.getElementById("service").value;
+const date=document.getElementById("date").value;
 
-const phone =
-document.getElementById("phone").value;
-
-const service =
-document.getElementById("service").value;
-
-const date =
-document.getElementById("date").value;
-
-const message =
+const message=
 `New Booking
 
 Name: ${name}
@@ -48,33 +32,25 @@ Phone: ${phone}
 Service: ${service}
 Date: ${date}`;
 
-const whatsapp =
-"https://wa.me/919818185270?text="+
-encodeURIComponent(message);
+const whatsapp="https://wa.me/919818185270?text="+encodeURIComponent(message);
 
 window.open(whatsapp,"_blank");
 
 });
 
+document.addEventListener("DOMContentLoaded",function(){
 
+const slides=document.querySelectorAll(".slide");
+let index=0;
 
-/* HERO IMAGE SLIDER */
-
-document.addEventListener("DOMContentLoaded", function(){
-
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-
-function nextSlide(){
+setInterval(function(){
 
 slides[index].classList.remove("active");
 
-index = (index + 1) % slides.length;
+index=(index+1)%slides.length;
 
 slides[index].classList.add("active");
 
-}
-
-setInterval(nextSlide, 4000);
+},4000);
 
 });
