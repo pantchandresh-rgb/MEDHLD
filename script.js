@@ -1,80 +1,59 @@
-document.addEventListener("DOMContentLoaded", function(){
+function calculatePrice(){
 
-// HERO SLIDER
+const service =
+Number(document.getElementById("estService").value);
 
-const slides = document.querySelectorAll(".slide");
-let index=0;
+const urgency =
+Number(document.getElementById("urgency").value);
 
-function nextSlide(){
+if(!service){
 
-slides.forEach(s=>s.classList.remove("active"));
+document.getElementById("estimateResult")
+.innerText="Please select a service";
 
-index++;
-
-if(index>=slides.length){
-index=0;
-}
-
-slides[index].classList.add("active");
+return;
 
 }
 
-setInterval(nextSlide,4000);
+const price = service * urgency;
 
+document.getElementById("estimateResult")
+.innerText="Estimated Price: ₹"+price;
 
-// BOOKING FORM
+}
 
-const bookingForm=document.getElementById("bookingForm");
+/* WhatsApp booking */
 
-if(bookingForm){
-
-bookingForm.addEventListener("submit",function(e){
+document
+.getElementById("bookingForm")
+.addEventListener("submit",function(e){
 
 e.preventDefault();
 
-const name=document.getElementById("name").value;
-const phone=document.getElementById("phone").value;
-const city=document.getElementById("city").value;
-const service=document.getElementById("service").value;
-const date=document.getElementById("date").value;
-const time=document.getElementById("time").value;
+const name =
+document.getElementById("name").value;
 
-const message=
+const phone =
+document.getElementById("phone").value;
+
+const service =
+document.getElementById("service").value;
+
+const date =
+document.getElementById("date").value;
+
+const message =
 `New Booking
 
 Name: ${name}
 Phone: ${phone}
-City: ${city}
 Service: ${service}
-Date: ${date}
-Time: ${time}`;
+Date: ${date}`;
 
-const url="https://wa.me/919818185270?text="+encodeURIComponent(message);
+const whatsapp =
+"https://wa.me/919818185270?text="+
+encodeURIComponent(message);
 
-window.open(url);
-
-});
-
-}
+window.open(whatsapp,"_blank");
 
 });
-
-
-// PRICE CALCULATOR
-
-function calculatePrice(){
-
-const service=document.getElementById("estService").value;
-const urgency=document.getElementById("urgency").value;
-
-if(service===""){
-document.getElementById("estimateResult").innerText="Select service";
-return;
-}
-
-const price=service*urgency;
-
-document.getElementById("estimateResult").innerText=
-"Estimated Price: ₹"+price;
-
-}

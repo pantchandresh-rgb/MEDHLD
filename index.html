@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -10,90 +9,55 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 
 <body>
 
-
 <!-- NAVBAR -->
 
-<nav class="navbar" id="navbar">
+<header class="navbar">
 
-<div class="container">
+<div class="nav-container">
 
-<div class="logo">
-<i class="fas fa-heartbeat"></i>
-HomeCare Health
-</div>
+<div class="logo">❤️ HomeCare Health</div>
 
 <ul class="nav-links">
-
-<li><a href="#home">Home</a></li>
+<li><a href="#">Home</a></li>
 <li><a href="#services">Services</a></li>
 <li><a href="#pricing">Pricing</a></li>
 <li><a href="#booking">Booking</a></li>
 <li><a href="#contact">Contact</a></li>
-
 </ul>
 
-<a href="https://wa.me/919818185270" class="btn btn-whatsapp-nav">
-<i class="fab fa-whatsapp"></i> Book
-</a>
-
-<div class="hamburger">
-<span></span>
-<span></span>
-<span></span>
-</div>
+<a href="#booking" class="btn-primary">Book</a>
 
 </div>
 
-</nav>
+</header>
 
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 
-<section id="home" class="hero">
+<section class="hero">
 
-<div class="container">
+<div class="hero-left">
 
-<div class="hero-content">
+<h1>Healthcare Services at Your Doorstep</h1>
 
-<h1>
-Healthcare Services at Your <span class="highlight">Doorstep</span>
-</h1>
-
-<ul class="hero-highlights">
-
+<ul>
 <li>Certified Nurses</li>
 <li>Injection & IV Drip at Home</li>
 <li>Blood Test & ECG</li>
 <li>Physiotherapy</li>
-
 </ul>
 
-<a href="#booking" class="btn btn-primary">
-Book Your Service
-</a>
+<a href="#booking" class="btn-primary">Book Your Service</a>
 
 </div>
 
-<div class="hero-image">
+<div class="hero-right">
 
-<div class="hero-slider">
-
-<img src= "https://https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80" class="slide active">
-
-<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80" class="slide">
-
-<img src="https://https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80" class="slide">
-
-</div>
-
-</div>
+<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef" alt="Healthcare">
 
 </div>
 
@@ -102,48 +66,67 @@ Book Your Service
 
 <!-- SERVICES -->
 
-<section id="services" class="services-section">
-
-<div class="container">
+<section class="services" id="services">
 
 <h2>Our Services</h2>
 
 <div class="services-grid">
 
 <div class="service-card">
-<i class="fas fa-syringe"></i>
 <h3>Injection at Home</h3>
 <p>Safe injection administration at home.</p>
+
+<div class="card-buttons">
+<span class="price-btn">₹299</span>
+<a href="#booking" class="book-btn">Book Now</a>
 </div>
 
+</div>
+
+
 <div class="service-card">
-<i class="fas fa-heartbeat"></i>
 <h3>ECG Test</h3>
 <p>Portable ECG testing service.</p>
+
+<div class="card-buttons">
+<span class="price-btn">₹999</span>
+<a href="#booking" class="book-btn">Book Now</a>
 </div>
 
+</div>
+
+
 <div class="service-card">
-<i class="fas fa-tint"></i>
 <h3>IV Drip</h3>
 <p>Professional IV drip care.</p>
+
+<div class="card-buttons">
+<span class="price-btn">₹1499</span>
+<a href="#booking" class="book-btn">Book Now</a>
 </div>
 
+</div>
+
+
 <div class="service-card">
-<i class="fas fa-user-nurse"></i>
 <h3>Nurse Visit</h3>
-<p>Home nurse visits for patient care.</p>
+<p>Home nurse visit for patient care.</p>
+
+<div class="card-buttons">
+<span class="price-btn">₹699</span>
+<a href="#booking" class="book-btn">Book Now</a>
 </div>
 
-<div class="service-card">
-<i class="fas fa-walking"></i>
-<h3>Physiotherapy</h3>
-<p>Physiotherapy sessions at home.</p>
 </div>
 
+
 <div class="service-card">
-<i class="fas fa-vial"></i>
 <h3>Blood Test</h3>
 <p>Home sample collection.</p>
+
+<div class="card-buttons">
+<span class="price-btn">₹399</span>
+<a href="#booking" class="book-btn">Book Now</a>
 </div>
 
 </div>
@@ -155,120 +138,57 @@ Book Your Service
 
 <!-- PRICE ESTIMATOR -->
 
-<section id="pricing" class="price-estimator">
-
-<div class="container">
+<section class="pricing" id="pricing">
 
 <h2>Transparent Pricing</h2>
 
-<div class="estimator-box">
+<div class="price-box">
 
 <select id="estService">
-
 <option value="">Select Service</option>
-<option value="300">Injection</option>
-<option value="800">IV Drip</option>
-<option value="600">ECG</option>
-<option value="700">Physiotherapy</option>
-
+<option value="299">Injection</option>
+<option value="999">ECG</option>
+<option value="1499">IV Drip</option>
 </select>
 
 <select id="urgency">
-
 <option value="1">Normal</option>
-<option value="1.2">Same Day</option>
-<option value="1.5">Emergency</option>
-
+<option value="1.5">Urgent</option>
 </select>
 
-<button onclick="calculatePrice()" class="btn btn-primary">
-Get Price
-</button>
+<button onclick="calculatePrice()">Get Price</button>
 
-<h3 id="estimateResult"></h3>
-
-</div>
+<p id="estimateResult"></p>
 
 </div>
 
 </section>
 
 
-<!-- BOOKING -->
+<!-- BOOKING FORM -->
 
-<section id="booking" class="booking-section">
-
-<div class="container">
+<section class="booking" id="booking">
 
 <h2>Book Your Service</h2>
 
-<form id="bookingForm" class="booking-form">
+<form id="bookingForm">
 
-<input id="name" type="text" placeholder="Full Name" required>
+<input type="text" id="name" placeholder="Full Name" required>
 
-<input id="phone" type="tel" placeholder="Phone Number" required>
-
-<select id="city">
-
-<option>Haldwani</option>
-<option>Kathgodam</option>
-<option>Nainital</option>
-
-</select>
+<input type="tel" id="phone" placeholder="Phone Number" required>
 
 <select id="service">
-
+<option>Select Service</option>
 <option>Injection</option>
 <option>ECG</option>
 <option>IV Drip</option>
-<option>Physiotherapy</option>
-
 </select>
 
-<input id="date" type="date">
+<input type="date" id="date" required>
 
-<input id="time" type="time">
-
-<button type="submit" class="btn btn-primary">
-Book on WhatsApp
-</button>
+<button type="submit">Book via WhatsApp</button>
 
 </form>
-
-</div>
-
-</section>
-
-
-<!-- PARTNER -->
-
-<section class="partner-section">
-
-<div class="container">
-
-<h2>Become a Health Partner</h2>
-
-<p>Join our healthcare network.</p>
-
-<form class="partner-form">
-
-<input placeholder="Full Name">
-
-<input placeholder="Phone Number">
-
-<input placeholder="Qualification">
-
-<input placeholder="Years of Experience">
-
-<input placeholder="Area of Expertise">
-
-<button class="btn btn-primary">
-Submit
-</button>
-
-</form>
-
-</div>
 
 </section>
 
@@ -281,21 +201,13 @@ Submit
 
 <div class="footer-links">
 
-<a href="#">Terms</a>
-<a href="#">Privacy</a>
+<a href="#">Terms & Conditions</a>
+<a href="#">Privacy Policy</a>
 <a href="#">Disclaimer</a>
 
 </div>
 
 </footer>
-
-
-<!-- Floating WhatsApp -->
-
-<a href="https://wa.me/919818185270" class="floating-whatsapp">
-<i class="fab fa-whatsapp"></i>
-</a>
-
 
 <script src="script.js"></script>
 
