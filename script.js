@@ -118,7 +118,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setTimeout(showSlides, 3000);
     }
+	
+	
 
+
+	
     showSlides();
 
 

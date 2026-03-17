@@ -74,6 +74,15 @@ margin-left:10px;
     display: none;
 }
 
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+
 .services-section{
 padding:80px 8%;
 text-align:center;
