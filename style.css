@@ -370,7 +370,84 @@ text-decoration:none;
         font-size: 16px;
     }
 
+/* ============================================
+   FIX: 3 COLUMN SECTION (Why + Form + Pricing)
+   ============================================ */
 
+.three-column-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.info-box,
+.booking-form-wrapper,
+.pricing-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    height: 100%;
+}
+
+/* Headings */
+.info-box h3,
+.booking-form-wrapper h2,
+.pricing-box h3 {
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+}
+
+/* List Styling */
+.info-box ul,
+.pricing-box ul {
+    padding-left: 0;
+}
+
+.info-box li,
+.pricing-box li {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   FIX: FORM SPACING
+   ============================================ */
+
+.booking-form input,
+.booking-form select {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* ============================================
+   FIX: BUTTON FULL WIDTH
+   ============================================ */
+
+.booking-form button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* ============================================
+   FIX: PRICING BOX BUTTON
+   ============================================ */
+
+.pricing-box button {
+    margin-top: 15px;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE FIX
+   ============================================ */
+
+@media (max-width: 768px) {
+    .three-column-section {
+        grid-template-columns: 1fr;
+    }
+}
     /* CITIES */
     .cities-grid {
         grid-template-columns: 1fr;

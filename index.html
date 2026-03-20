@@ -176,76 +176,40 @@ Book on WhatsApp
 
 <!-- PRICING + BOOKING -->
 <section id="pricing" class="pricing-section">
-<div class="pricing-wrapper">
+<div class="three-column-section">
 
-<div class="pricing-benefits">
-<h3 class="section-title">Why Choose HomeCare Health?</h3>
-<ul>
-<li>✔ Certified Healthcare Professionals</li>
-<li>✔ Same Day Home Visit</li>
-<li>✔ Transparent Pricing</li>
-<li>✔ Trusted by Local Families</li>
-<li>✔ Instant WhatsApp Booking</li>
-</ul>
-</div>
+    <!-- LEFT -->
+    <div class="info-box">
+        <h3>Why Choose HomeCare Health?</h3>
+        <ul>
+            <li>✔ Certified Healthcare Professionals</li>
+            <li>✔ Same Day Home Visit</li>
+            <li>✔ Transparent Pricing</li>
+            <li>✔ Trusted by Local Families</li>
+            <li>✔ Instant WhatsApp Booking</li>
+        </ul>
+    </div>
 
-<div class="booking-form" id="booking">
-<h3 class="section-title">Book Your Service</h3>
+    <!-- CENTER -->
+    <div class="booking-form-wrapper">
+        <h2>Book Your Service</h2>
+        <!-- KEEP YOUR FORM SAME -->
+    </div>
 
-<form id="bookingForm">
-<input id="name" placeholder="Full Name" required>
-<input id="phone" placeholder="Phone Number" required>
+    <!-- RIGHT -->
+    <div class="pricing-box">
+        <h3>Transparent Pricing</h3>
+        <select>
+            <option>Select Service</option>
+        </select>
 
-<select id="city" required>
-<option value="">Select City</option>
-<option>Haldwani</option>
-<option>Kathgodam</option>
-<option>Nainital</option>
-</select>
+        <select>
+            <option>Normal</option>
+            <option>Urgent</option>
+        </select>
 
-<select id="service" required>
-<option value="">Select Service</option>
-<option>Injection</option>
-<option>ECG</option>
-<option>IV Drip</option>
-<option>Nurse Visit</option>
-<option>Physiotherapy</option>
-<option>Blood Test</option>
-<option>Wound Dressing</option>
-<option>BP / Sugar Check</option>
-</select>
-
-<input id="date" type="date" required>
-<input id="time" type="time" required>
-
-<button type="submit" class="whatsapp-btn">
-Book via WhatsApp
-</button>
-</form>
-</div>
-
-<div class="price-estimator">
-<h3 class="section-title">Transparent Pricing</h3>
-
-<select id="estService">
-<option value="">Select Service</option>
-<option value="199">Injection</option>
-<option value="699">ECG</option>
-<option value="499">IV Drip</option>
-<option value="399">Nurse Visit</option>
-</select>
-
-<select id="urgency">
-<option value="1">Normal</option>
-<option value="1.5">Urgent</option>
-</select>
-
-<button onclick="calculatePrice()" class="calc-btn">
-Calculate Price
-</button>
-
-<p id="estimateResult"></p>
-</div>
+        <button class="btn btn-primary">Calculate Price</button>
+    </div>
 
 </div>
 </section>
