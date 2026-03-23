@@ -163,8 +163,8 @@ function calculatePrice() {
 
     const price = service * urgency;
 
-    document.getElementById("estimateResult").innerText =
-        "Estimated Price: ₹" + price.toLocaleString("en-IN");
+    document.getElementById("estimateResult").innerHTML =
+    "💰 Estimated Price: <strong>₹" + total + "</strong>";
 }
 
 // HERO IMAGE SLIDER
