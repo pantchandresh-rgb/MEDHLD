@@ -121,37 +121,62 @@ body {
 
 /* 3 COLUMN SECTION */
 .three-column-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    padding: 60px 8%;
+    display: flex;
+    gap: 25px;
+    padding: 40px;
+    background: linear-gradient(to right, #f8fbff, #eef6ff);
 }
 
-.info-box,
-.booking-form,
-.price-estimator {
-    background: #fff;
+.info-box, .booking-form, .price-estimator {
+    flex: 1;
+    background: #ffffff;
     padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.info-box:hover,
+.booking-form:hover,
+.price-estimator:hover {
+    transform: translateY(-5px);
+}
+
+.booking-form {
+    border: 2px solid #0077ff;
+    background: linear-gradient(to bottom, #ffffff, #f0f7ff);
 }
 
 .booking-form input,
-.booking-form select,
-.price-estimator select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-.whatsapp-btn,
-.calc-btn {
+.booking-form select {
     width: 100%;
     padding: 12px;
-    border: none;
-    border-radius: 6px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.2s;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+    border-color: #0077ff;
+    outline: none;
+}
+
+.whatsapp-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #0077ff, #00aaff);
     color: white;
-    background: #0077ff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background: linear-gradient(45deg, #005ecc, #0088cc);
 }
 
 /* WHY US */

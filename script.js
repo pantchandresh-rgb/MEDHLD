@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 3. BOOKING FORM → WHATSAPP
     // ============================================
 
-    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+   document.getElementById("bookingForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
     let name = document.getElementById("name").value;
@@ -62,6 +62,10 @@ Time: ${time}`;
     let whatsappURL = `https://wa.me/919818185270?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappURL, "_blank");
+
+    // ✅ CLEAR FORM AFTER SUBMIT
+    alert("Booking request sent! We will contact you shortly.");
+    document.getElementById("bookingForm").reset();
 });
 
 
