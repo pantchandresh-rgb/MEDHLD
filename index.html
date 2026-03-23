@@ -136,32 +136,38 @@
         <h3>Book Service</h3>
 
         <form id="bookingForm">
-            <input type="text" placeholder="Your Name" required>
-            <input type="tel" placeholder="Phone Number" required>
 
-            <select>
-                <option>Haldwani</option>
-                <option>Kathgodam</option>
-                <option>Nainital</option>
-            </select>
+    <input type="text" id="name" placeholder="Your Name" required>
 
-            <select>
-                <option>Injection</option>
-                <option>IV Drip</option>
-                <option>ECG</option>
-                <option>Nurse Visit</option>
-                <option>Physiotherapy</option>
-                <option>Blood Test</option>
-                <option>Wound Dressing</option>
-            </select>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
 
-            <input type="date">
-            <input type="time">
+    <select id="city" required>
+        <option value="">Select Location</option>
+        <option>Haldwani</option>
+        <option>Kathgodam</option>
+        <option>Nainital</option>
+    </select>
 
-            <button type="submit" class="whatsapp-btn">
-                Book on WhatsApp
-            </button>
-        </form>
+    <select id="service" required>
+        <option value="">Select Service</option>
+        <option>Injection</option>
+        <option>IV Drip</option>
+        <option>ECG</option>
+        <option>Nurse Visit</option>
+        <option>Physiotherapy</option>
+        <option>Blood Test</option>
+        <option>Wound Dressing</option>
+    </select>
+
+    <input type="date" id="date" required>
+
+    <input type="time" id="time" required>
+
+    <button type="submit" class="whatsapp-btn">
+        Book on WhatsApp
+    </button>
+
+</form>
     </div>
 
     <!-- PRICING -->

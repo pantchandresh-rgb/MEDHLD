@@ -40,57 +40,30 @@ document.addEventListener("DOMContentLoaded", function () {
     // 3. BOOKING FORM → WHATSAPP
     // ============================================
 
-    const bookingForm = document.getElementById("bookingForm");
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-    if (bookingForm) {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let city = document.getElementById("city").value;
+    let service = document.getElementById("service").value;
+    let date = document.getElementById("date").value;
+    let time = document.getElementById("time").value;
 
-        bookingForm.addEventListener("submit", function (e) {
+    let message = `New Booking Request:
 
-            e.preventDefault();
+Name: ${name}
+Phone: ${phone}
+City: ${city}
+Service: ${service}
+Date: ${date}
+Time: ${time}`;
 
-            const name = document.getElementById("name").value.trim();
-            const phone = document.getElementById("phone").value.trim();
-            const city = document.getElementById("city").value;
-            const service = document.getElementById("service").value;
-            const date = document.getElementById("date").value;
-            const time = document.getElementById("time").value;
+    let whatsappURL = `https://wa.me/919818185270?text=${encodeURIComponent(message)}`;
 
-            if (!name || !phone || !city || !service || !date || !time) {
-                alert("Please fill all fields");
-                return;
-            }
+    window.open(whatsappURL, "_blank");
+});
 
-            if (phone.length !== 10) {
-                alert("Enter valid 10 digit phone number");
-                return;
-            }
-
-            const message =
-`📋 New Service Booking
-
-👤 Name: ${name}
-📞 Phone: ${phone}
-📍 City: ${city}
-🏥 Service: ${service}
-
-📅 Date: ${date}
-⏰ Time: ${time}`;
-
-            const whatsappNumber = "919818185270";
-
-            const url =
-                "https://wa.me/" +
-                whatsappNumber +
-                "?text=" +
-                encodeURIComponent(message);
-
-            window.open(url, "_blank");
-
-            bookingForm.reset();
-
-        });
-
-    }
 
 
     // ============================================
