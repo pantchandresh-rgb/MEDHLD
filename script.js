@@ -97,6 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // 4. HERO IMAGE SLIDER (AUTO)
     // ============================================
 
+    window.onload = function () {
+
     let slideIndex = 0;
     const slides = document.querySelectorAll(".hero-slider img");
 
@@ -118,10 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setTimeout(showSlides, 3000);
     }
-	
-	
-    showSlides();
 
+    showSlides();
+};
 
     // ============================================
     // 5. STICKY HEADER (OPTIONAL)
