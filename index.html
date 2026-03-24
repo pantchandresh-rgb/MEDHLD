@@ -6,7 +6,6 @@
 <title>MedHLD - Home Healthcare</title>
 
 <link rel="stylesheet" href="style.css">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -38,13 +37,14 @@
             Book on WhatsApp
         </a>
     </div>
-    <div class="hero-slider">
-    <img src="images/img1.jpg">
-    <img src="images/img2.jpg">
-    <img src="images/img3.jpg">
-    <img src="images/img4.jpg">
-</div>
 
+    <!-- ✅ FIXED SLIDER -->
+    <div class="hero-slider">
+        <img src="images/img1.jpg" class="slide active">
+        <img src="images/img2.jpg" class="slide">
+        <img src="images/img3.jpg" class="slide">
+        <img src="images/img4.jpg" class="slide">
+    </div>
 
 </section>
 
@@ -120,138 +120,109 @@
 
     <!-- WHY US -->
     <div class="info-box">
+        <h3>Why Choose Us?</h3>
 
-    <h3>Why Choose Us?</h3>
+        <ul>
+            <li>✔ Certified Healthcare Professionals</li>
+            <li>✔ Transparent Pricing</li>
+            <li>✔ Fast Service</li>
+            <li>✔ Home Comfort</li>
+            <li>✔ Trusted by Local Families</li>
+            <li>✔ Instant WhatsApp Booking</li>
+        </ul>
 
-    <ul>
-        <li>✔ Certified Healthcare Professionals</li>
-        <li>✔ Transparent Pricing</li>
-        <li>✔ Fast Service</li>
-        <li>✔ Home Comfort</li>
-        <li>✔ Trusted by Local Families</li>
-        <li>✔ Instant WhatsApp Booking</li>
-    </ul>
+        <img src="images/img5.jpg" class="side-img">
 
-    <!-- Image -->
-    <img src="images/doctor.jpg" class="side-img">
+        <div class="trust-box">
+            ⭐ 4.8 Rated | 100+ Happy Patients
+        </div>
 
-    <!-- Trust Badge -->
-    <div class="trust-box">
-        ⭐ 4.8 Rated | 100+ Happy Patients
+        <a href="https://wa.me/919818185270" class="side-btn">
+            Talk to Expert
+        </a>
     </div>
 
-    <!-- CTA -->
-    <a href="https://wa.me/919818185270" class="side-btn">
-        Talk to Expert
-    </a>
-
-</div>
     <!-- BOOK FORM -->
     <div class="booking-form">
         <h3>Book Service</h3>
 
         <form id="bookingForm">
 
-    <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
 
-    <input type="tel" id="phone" placeholder="Phone Number" required>
+            <select id="city" required>
+                <option value="">Select Location</option>
+                <option>Haldwani</option>
+                <option>Kathgodam</option>
+                <option>Nainital</option>
+            </select>
 
-    <select id="city" required>
-        <option value="">Select Location</option>
-        <option>Haldwani</option>
-        <option>Kathgodam</option>
-        <option>Nainital</option>
-    </select>
+            <select id="service" required>
+                <option value="">Select Service</option>
+                <option>Injection</option>
+                <option>IV Drip</option>
+                <option>ECG</option>
+                <option>Nurse Visit</option>
+                <option>Physiotherapy</option>
+                <option>Blood Test</option>
+                <option>Wound Dressing</option>
+            </select>
 
-    <select id="service" required>
-        <option value="">Select Service</option>
-        <option>Injection</option>
-        <option>IV Drip</option>
-        <option>ECG</option>
-        <option>Nurse Visit</option>
-        <option>Physiotherapy</option>
-        <option>Blood Test</option>
-        <option>Wound Dressing</option>
-    </select>
+            <input type="date" id="date" required>
+            <input type="time" id="time" required>
 
-    <input type="date" id="date" required>
+            <button type="submit" class="whatsapp-btn">
+                Book on WhatsApp
+            </button>
 
-    <input type="time" id="time" required>
-
-    <button type="submit" class="whatsapp-btn">
-        Book on WhatsApp
-    </button>
-
-</form>
+        </form>
     </div>
 
-    <!-- PRICING -->
-   <div class="price-estimator">
+    <!-- PRICE -->
+    <div class="price-estimator">
 
-    <h3>Transparent Pricing</h3>
+        <h3>💰 Instant Price Calculator</h3>
 
-    <p class="tagline">Know your cost before booking</p>
+        <select id="estService">
+            <option value="299">Injection</option>
+            <option value="799">IV Drip</option>
+            <option value="999">ECG</option>
+            <option value="499">Nurse Visit</option>
+            <option value="699">Physiotherapy</option>
+            <option value="499">Blood Test</option>
+        </select>
 
-    <select id="estService">
-        <option value="299">Injection</option>
-        <option value="799">IV Drip</option>
-        <option value="999">ECG</option>
-        <option value="499">Nurse Visit</option>
-        <option value="699">Physiotherapy</option>
-        <option value="399">Blood Test</option>
-    </select>
+        <select id="urgency">
+            <option value="1">Normal</option>
+            <option value="1.5">Urgent</option>
+        </select>
 
-    <select id="urgency">
-        <option value="1">Normal</option>
-        <option value="1.5">Urgent</option>
-    </select>
+        <!-- ✅ FIXED BUTTON -->
+        <button type="button" id="calcBtn" class="calc-btn">
+            Get Price
+        </button>
 
-    <button onclick="calculatePrice()" class="calc-btn">
-        Get Price
-    </button>
+        <div id="estimateResult" class="price-result"></div>
 
-    <h4 id="estimateResult"></h4>
+        <img src="images/img6.jpg" class="side-img">
 
-    <!-- Add image -->
-    <img src="images/medical2.jpg" class="side-img">
-
-    <!-- Trust points -->
-    <div class="price-info">
-        ✔ No hidden charges<br>
-        ✔ Pay after service<br>
-        ✔ Quick response team
-    </div>
-
-    <a href="https://wa.me/919818185270" class="side-btn">
-        Book Now
-    </a>
-
-</div>
-<!-- PARTNER -->
-<section id="partner" class="partner-section">
-
-    <div class="partner-container">
-
-        <div>
-            <h2>Join as Healthcare Partner</h2>
-            <p>Technicians, nurses, and therapists can join and earn.</p>
-
-            <a href="https://wa.me/919818185270" class="service-btn">
-                Join Now
-            </a>
+        <div class="price-info">
+            ✔ No hidden charges<br>
+            ✔ Pay after service<br>
+            ✔ Quick response team
         </div>
 
-        <div class="partner-image">
-            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
-        </div>
+        <a href="https://wa.me/919818185270" class="side-btn">
+            Book Now
+        </a>
 
     </div>
 
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
-    <p>© 2026 MedHLD | Serving Haldwani, Kathgodam & Nainital</p>
+    <p>© 2026 MedHLD</p>
 </footer>
 
 <script src="script.js"></script>
