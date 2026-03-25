@@ -4,57 +4,139 @@
 
 const technicians = {
     Haldwani: {
-        Injection: ["919900000001", "919900000002"],
-        "IV Drip": ["919900000003"],
-        ECG: ["919900000004"],
-        "Nurse Visit": ["919900000005"],
-        Physiotherapy: ["919900000006"],
-        "Blood Test": ["919900000007"],
-        "Wound Dressing": ["919900000008"]
+
+        "Rampur Road": {
+            Injection: ["919900000001", "919900000002"],
+            "IV Drip": ["919900000003"],
+            ECG: ["919900000004"],
+            "Nurse Visit": ["919900000005"],
+            Physiotherapy: ["919900000006"],
+            "Blood Test": ["919900000007"]
+        },
+
+        "Kaladhungi Road": {
+            Injection: ["919900000008"],
+            "IV Drip": ["919900000009"],
+            ECG: ["919900000010"],
+            "Nurse Visit": ["919900000011"]
+        },
+
+        "Nainital Road": {
+            Injection: ["919900000012"],
+            Physiotherapy: ["919900000013"],
+            "Blood Test": ["919900000014"]
+        },
+
+        "Mukhani": {
+            Injection: ["919900000015"],
+            "IV Drip": ["919900000016"],
+            "Nurse Visit": ["919900000017"],
+            Physiotherapy: ["919900000018"]
+        },
+
+        "Heera Nagar": {
+            Injection: ["919900000019"],
+            ECG: ["919900000020"]
+        },
+
+        "Kusumkhera": {
+            Injection: ["919900000021"],
+            "Blood Test": ["919900000022"]
+        },
+
+        "Panchakki": {
+            Injection: ["919900000023"],
+            "IV Drip": ["919900000024"]
+        },
+
+        "Bareilly Road": {
+            Injection: ["919900000025"],
+            "Nurse Visit": ["919900000026"]
+        },
+
+        "Transport Nagar": {
+            Injection: ["919900000027"],
+            Physiotherapy: ["919900000028"]
+        }
     },
+
     Kathgodam: {
-        Injection: ["919800000001"],
-        "IV Drip": ["919800000002"],
-        ECG: ["919800000003"],
-        "Nurse Visit": ["919800000004"],
-        Physiotherapy: ["919800000005"],
-        "Blood Test": ["919800000006"],
-        "Wound Dressing": ["919800000007"]
-    },
-    Nainital: {
-        Injection: ["919700000001"],
-        "IV Drip": ["919700000002"],
-        ECG: ["919700000003"],
-        "Nurse Visit": ["919700000004"],
-        Physiotherapy: ["919700000005"],
-        "Blood Test": ["919700000006"],
-        "Wound Dressing": ["919700000007"]
+
+        "Kathgodam Market": {
+            Injection: ["919900000029"],
+            "IV Drip": ["919900000030"],
+            ECG: ["919900000031"]
+        },
+
+        "Gaula Barrage": {
+            Injection: ["919900000032"],
+            "Blood Test": ["919900000033"]
+        },
+
+        "Shish Mahal": {
+            Injection: ["919900000034"],
+            "Nurse Visit": ["919900000035"]
+        },
+
+        "Ranibagh": {
+            Injection: ["919900000036"],
+            Physiotherapy: ["919900000037"]
+        },
+
+        "Lalkuan Road": {
+            Injection: ["919900000038"],
+            "IV Drip": ["919900000039"]
+        }
     }
 };
+
 
 // ============================================
 // 🔁 ROUND ROBIN (WITH STORAGE)
 // ============================================
 
+// ==============================
+// 🔹 ROUND ROBIN + FALLBACK LOGIC
+// ==============================
+
 let lastAssignedIndex = JSON.parse(localStorage.getItem("assignIndex")) || {};
 
-function getTechnician(city, selectedService) {
+function getTechnician(city, area, selectedService) {
 
-    let list = technicians[city]?.[selectedService];
+    // 🔹 1. Try exact area match
+    let list = technicians[city]?.[area]?.[selectedService];
+    let key = city + "_" + area + "_" + selectedService;
 
-    if (!list || list.length === 0) return null;
+    // 🔹 2. FALLBACK: if no technician in area
+    if (!list || list.length === 0) {
 
-    let key = city + "_" + selectedService;
+        console.log("No tech in selected area → using fallback");
 
+        let allAreas = technicians[city];
+        let combinedList = [];
+
+        for (let areaName in allAreas) {
+            let services = allAreas[areaName][selectedService];
+            if (services) {
+                combinedList = combinedList.concat(services);
+            }
+        }
+
+        if (combinedList.length === 0) return null;
+
+        list = combinedList;
+        key = city + "_ALL_" + selectedService;
+    }
+
+    // 🔹 3. ROUND ROBIN
     if (lastAssignedIndex[key] === undefined) {
         lastAssignedIndex[key] = 0;
     }
 
     let index = lastAssignedIndex[key];
     let assigned = list[index];
- 	
-    console.log("Assigned Technician:", assigned, "| Index:", index);
 
+    console.log("Assigned:", assigned, "| Key:", key, "| Index:", index);
 
     lastAssignedIndex[key] = (index + 1) % list.length;
 
@@ -62,6 +144,7 @@ function getTechnician(city, selectedService) {
 
     return assigned;
 }
+
 
 // ============================================
 // 🚀 MAIN
@@ -86,18 +169,27 @@ document.addEventListener("DOMContentLoaded", function () {
             let selectedService = document.getElementById("service")?.value;
             let date = document.getElementById("date")?.value;
             let time = document.getElementById("time")?.value;
+            // ✅ NEW FIELDS
+        let area = document.getElementById("area")?.value;
+        let address = document.getElementById("address")?.value;
+        let notes = document.getElementById("notes")?.value;
+
+
 
             if (!name || !phone || !city || !selectedService) {
                 alert("Please fill all required fields");
                 return;
             }
 
-            let assignedNumber = getTechnician(city, selectedService);
+            let assignedNumber = getTechnician(city, area, selectedService);
 
             if (!assignedNumber) {
                 assignedNumber = "919818185270";
             }
-
+		
+	    	
+	    
+            let address = document.getElementById("address").value;	
             let message = `🩺 *New Booking Request*
 
 👤 Name: ${name}
@@ -105,7 +197,10 @@ document.addEventListener("DOMContentLoaded", function () {
 📍 Location: ${city}
 💉 Service: ${selectedService}
 📅 Date: ${date}
-⏰ Time: ${time}`;
+⏰ Time: ${time}
+📌 Area: ${area}
+🏠 Address: ${address}
+📝 Notes: ${notes || "N/A"}`;
 
             let whatsappURL = `https://wa.me/${assignedNumber}?text=${encodeURIComponent(message)}`;
 
@@ -120,23 +215,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // ============================================
     // 🎞️ HERO SLIDER (FIXED)
     // ============================================
+let slides = document.querySelectorAll(".slide");
 
-    let slides = document.querySelectorAll(".slide");
-    let currentSlide = 0;
+if (slides.length > 0) {
+    let index = 0;
 
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove("active"));
-        if (slides[index]) slides[index].classList.add("active");
-    }
-
-    if (slides.length > 0) {
-        showSlide(0);
-
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }, 3000);
-    }
+    setInterval(() => {
+        slides[index].classList.remove("active");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active");
+    }, 3000);
+}
 
     // ============================================
     // 💰 PRICE CALCULATOR BUTTON

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MedHLD - Home Healthcare</title>
+<title> MedKit | Healthcare at Home</title>
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -35,18 +35,20 @@
             Wound Dressing & BP/Sugar Check at your doorstep.
         </p>
 
-        <a href="https://wa.me/919818185270" class="service-btn">
-            Book on WhatsApp
+        <a href="https://wa.me/919818185270" class="premium-btn whatsapp-premium">
+    💬 Book on WhatsApp
         </a>
     </div>
 
     <!-- ✅ FIXED SLIDER -->
-    <div class="hero-slider">
+   
+    <div class="slider">
         <img src="images/img1.jpg" class="slide active">
         <img src="images/img2.jpg" class="slide">
         <img src="images/img3.jpg" class="slide">
-        <img src="images/img4.jpg" class="slide">
+	<img src="images/img4.jpg" class="slide">
     </div>
+</div>
 
 </section>
 
@@ -153,14 +155,36 @@
             <input type="text" id="name" placeholder="Your Name" required>
             <input type="tel" id="phone" placeholder="Phone Number" required>
 
-            <select id="city" required>
-                <option value="">Select Location</option>
-                <option>Haldwani</option>
-                <option>Kathgodam</option>
-                <option>Nainital</option>
-            </select>
+            <select id="area" required>
+    <option value="">Select Area</option>
+    
 
-            <select id="service" required>
+    <optgroup label="Haldwani">
+        <option value="Rampur Road">Rampur Road</option>
+        <option value="Kaladhungi Road">Kaladhungi Road</option>
+        <option value="Nainital Road">Nainital Road</option>
+        <option value="Mukhani">Mukhani</option>
+        <option value="Heera Nagar">Heera Nagar</option>
+        <option value="Kusumkhera">Kusumkhera</option>
+        <option value="Panchakki">Panchakki</option>
+        <option value="Bareilly Road">Bareilly Road</option>
+        <option value="Transport Nagar">Transport Nagar</option>
+    </optgroup>
+
+    <optgroup label="Kathgodam">
+        <option value="Kathgodam Market">Kathgodam Market</option>
+        <option value="Gaula Barrage">Gaula Barrage</option>
+        <option value="Shish Mahal">Shish Mahal</option>
+        <option value="Ranibagh">Ranibagh</option>
+        <option value="Lalkuan Road">Lalkuan Road</option>
+    </optgroup>
+</select>
+
+       <input type="text" id="address" placeholder="Enter Full Address" required>
+           
+
+
+ <select id="service" required>
 
     <option value="">Select Service</option>
     <option value="Injection">Injection</option>
@@ -174,8 +198,9 @@
 
             <input type="date" id="date" required>
             <input type="time" id="time" required>
-
-            <button type="submit" class="whatsapp-btn">
+     <textarea id="notes" placeholder="Patient condition / notes (optional)"></textarea>
+           
+ <button type="submit" class="whatsapp-btn">
                 Book on WhatsApp
             </button>
 
@@ -244,11 +269,14 @@
                 <li>✔ Trusted brand support</li>
             </ul>
 
-            <a href="https://wa.me/919818185270" class="service-btn">
-                Become a Partner
-            </a>
+            
+            <a href="https://wa.me/919818185270" class="premium-btn partner-premium">
+          🤝 Become a Partner
+        </a>
+		
         </div>
-
+       
+    
         <!-- RIGHT IMAGE -->
         <div class="partner-image">
             <img src="images/img7.jpg" alt="Healthcare Partner">
@@ -259,15 +287,43 @@
 </section>
 
 
-<footer class="footer">
-    <p>© 2026 MedHLD</p>
-</footer>
-
 <script src="script.js"></script>
 
 <a href="https://wa.me/919818185270" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h3>MedKit</h3>
+            <p>Healthcare services at your doorstep with trusted professionals.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Book Now</a>
+            <a href="#">Partner</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <p>📞 +91 9818185270</p>
+            <p>📍 Haldwani & Kathgodam</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 MedKit | All Rights Reserved
+    </div>
+
+</footer>
+
 
 </body>
 </html>
