@@ -187,9 +187,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 assignedNumber = "919818185270";
             }
 		
-	    	
-	    
-            let address = document.getElementById("address").value;	
+	       
+            	
             let message = `🩺 *New Booking Request*
 
 👤 Name: ${name}
