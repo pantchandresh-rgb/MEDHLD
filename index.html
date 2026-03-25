@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -159,15 +161,16 @@
             </select>
 
             <select id="service" required>
-                <option value="">Select Service</option>
-                <option>Injection</option>
-                <option>IV Drip</option>
-                <option>ECG</option>
-                <option>Nurse Visit</option>
-                <option>Physiotherapy</option>
-                <option>Blood Test</option>
-                <option>Wound Dressing</option>
-            </select>
+
+    <option value="">Select Service</option>
+    <option value="Injection">Injection</option>
+    <option value="IV Drip">IV Drip</option>
+    <option value="ECG">ECG</option>
+    <option value="Nurse Visit">Nurse Visit</option>
+    <option value="Physiotherapy">Physiotherapy</option>
+    <option value="Blood Test">Blood Test</option>
+    <option value="Wound Dressing">Wound Dressing</option>
+</select>
 
             <input type="date" id="date" required>
             <input type="time" id="time" required>
@@ -184,14 +187,14 @@
 
         <h3>💰 Instant Price Calculator</h3>
 
-        <select id="estService">
-            <option value="299">Injection</option>
-            <option value="799">IV Drip</option>
-            <option value="999">ECG</option>
-            <option value="499">Nurse Visit</option>
-            <option value="699">Physiotherapy</option>
-            <option value="499">Blood Test</option>
-        </select>
+       <select id="estService">
+    <option value="299">Injection</option>
+    <option value="799">IV Drip</option>
+    <option value="999">ECG</option>
+    <option value="499">Nurse Visit</option>
+    <option value="699">Physiotherapy</option>
+    <option value="499">Blood Test</option>
+</select>
 
         <select id="urgency">
             <option value="1">Normal</option>
@@ -221,11 +224,50 @@
 
 </section>
 
+<section id="partner" class="partner-section">
+
+    <div class="partner-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="partner-content">
+            <h2>Partner With Us</h2>
+
+            <p>
+                Join our network of certified healthcare professionals and
+                grow your practice with trusted home service opportunities.
+            </p>
+
+            <ul>
+                <li>✔ Flexible working hours</li>
+                <li>✔ Regular patient flow</li>
+                <li>✔ Fast payments</li>
+                <li>✔ Trusted brand support</li>
+            </ul>
+
+            <a href="https://wa.me/919818185270" class="service-btn">
+                Become a Partner
+            </a>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="partner-image">
+            <img src="images/img7.jpg" alt="Healthcare Partner">
+        </div>
+
+    </div>
+
+</section>
+
+
 <footer class="footer">
     <p>© 2026 MedHLD</p>
 </footer>
 
 <script src="script.js"></script>
+
+<a href="https://wa.me/919818185270" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>

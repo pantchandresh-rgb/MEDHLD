@@ -33,22 +33,18 @@ const technicians = {
 };
 
 // ============================================
-// 🔁 ROUND ROBIN MEMORY (UPGRADED)
+// 🔁 ROUND ROBIN (WITH STORAGE)
 // ============================================
 
 let lastAssignedIndex = JSON.parse(localStorage.getItem("assignIndex")) || {};
 
-// ============================================
-// 👨‍⚕️ ASSIGN TECHNICIAN
-// ============================================
+function getTechnician(city, selectedService) {
 
-function getTechnician(city, service) {
-
-    let list = technicians[city]?.[service];
+    let list = technicians[city]?.[selectedService];
 
     if (!list || list.length === 0) return null;
 
-    let key = city + "_" + service;
+    let key = city + "_" + selectedService;
 
     if (lastAssignedIndex[key] === undefined) {
         lastAssignedIndex[key] = 0;
@@ -56,11 +52,12 @@ function getTechnician(city, service) {
 
     let index = lastAssignedIndex[key];
     let assigned = list[index];
+ 	
+    console.log("Assigned Technician:", assigned, "| Index:", index);
 
-    // update index
+
     lastAssignedIndex[key] = (index + 1) % list.length;
 
-    // save to localStorage
     localStorage.setItem("assignIndex", JSON.stringify(lastAssignedIndex));
 
     return assigned;
@@ -73,7 +70,7 @@ function getTechnician(city, service) {
 document.addEventListener("DOMContentLoaded", function () {
 
     // ============================================
-    // 1. BOOKING FORM → SMART ASSIGNMENT
+    // 📩 BOOKING FORM
     // ============================================
 
     const form = document.getElementById("bookingForm");
@@ -83,20 +80,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
             e.preventDefault();
 
-            let name = document.getElementById("name").value;
-            let phone = document.getElementById("phone").value;
-            let city = document.getElementById("city").value;
-            let service = document.getElementById("service").value;
-            let date = document.getElementById("date").value;
-            let time = document.getElementById("time").value;
+            let name = document.getElementById("name")?.value;
+            let phone = document.getElementById("phone")?.value;
+            let city = document.getElementById("city")?.value;
+            let selectedService = document.getElementById("service")?.value;
+            let date = document.getElementById("date")?.value;
+            let time = document.getElementById("time")?.value;
 
-            if (!name || !phone || !city || !service) {
+            if (!name || !phone || !city || !selectedService) {
                 alert("Please fill all required fields");
                 return;
             }
 
-            // 🔥 ASSIGN TECHNICIAN
-            let assignedNumber = getTechnician(city, service);
+            let assignedNumber = getTechnician(city, selectedService);
 
             if (!assignedNumber) {
                 assignedNumber = "919818185270";
@@ -107,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
 👤 Name: ${name}
 📞 Phone: ${phone}
 📍 Location: ${city}
-💉 Service: ${service}
+💉 Service: ${selectedService}
 📅 Date: ${date}
 ⏰ Time: ${time}`;
 
@@ -122,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ============================================
-    // 2. HERO SLIDER (FIXED)
+    // 🎞️ HERO SLIDER (FIXED)
     // ============================================
 
     let slides = document.querySelectorAll(".slide");
@@ -134,16 +130,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (slides.length > 0) {
-        showSlide(0); // 🔥 IMPORTANT FIX
+        showSlide(0);
 
-        setInterval(function () {
+        setInterval(() => {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         }, 3000);
     }
 
     // ============================================
-    // 3. PRICE CALCULATOR BUTTON FIX
+    // 💰 PRICE CALCULATOR BUTTON
     // ============================================
 
     const calcBtn = document.getElementById("calcBtn");
@@ -153,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ============================================
-    // 4. DATE MIN = TODAY
+    // 📅 DATE MIN = TODAY
     // ============================================
 
     const dateInput = document.getElementById("date");
@@ -164,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ============================================
-    // 5. PHONE VALIDATION
+    // 📱 PHONE VALIDATION
     // ============================================
 
     const phoneInput = document.getElementById("phone");
@@ -183,15 +179,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function calculatePrice() {
 
-    let service = document.getElementById("estService").value;
-    let urgency = document.getElementById("urgency").value;
+    let servicePrice = document.getElementById("estService")?.value;
+    let urgency = document.getElementById("urgency")?.value;
 
-    if (!service) {
+    if (!servicePrice) {
         alert("Please select a service");
         return;
     }
 
-    let total = Math.round(service * urgency);
+    let total = Math.round(servicePrice * urgency);
 
     document.getElementById("estimateResult").innerHTML =
         "💰 Estimated Price: <strong>₹" + total + "</strong>";
