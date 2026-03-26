@@ -52,6 +52,26 @@ body {
     color: #555;
 }
 
+.how-it-works {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.steps {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.step-box {
+    background: #f5f9ff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 250px;
+}
+
+
 /* SLIDER */
 .slider {
     position: relative;
@@ -107,6 +127,129 @@ body {
     padding: 10px;
     display: inline-block;
 }
+
+.elder-care {
+    padding: 80px 8%;
+    background: linear-gradient(135deg, #f5f9ff, #eaf3ff);
+}
+
+.elder-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.elder-content {
+    flex: 1;
+}
+
+.elder-content h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.elder-sub {
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* FEATURE CARDS */
+.elder-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.feature-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.feature-card i {
+    color: #0077ff;
+    font-size: 20px;
+}
+
+/* PRICE BOX */
+.price-box {
+    background: linear-gradient(135deg, #0077ff, #00c6ff);
+    color: white;
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.price-box h3 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+/* CTA BUTTON */
+.elder-btn {
+    display: inline-block;
+    padding: 16px 26px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: 0.3s;
+} 
+
+.badge {
+    background: #ffcc00;
+    color: #000;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.elder-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37,211,102,0.4);
+}
+
+.feature-card {
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+
+/* IMAGE */
+.elder-image img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+
+
+
+
+
+
+
+
+
 
 /* 3 COLUMN SECTION */
 .three-column-section {
@@ -394,6 +537,35 @@ p, li {
 .whatsapp-float:hover {
     transform: scale(1.1);
 }
+
+.areas {
+    padding: 40px 8%;
+    text-align: center;
+    background: #eef6ff;
+}
+
+.call-float {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+
+    background: #0077ff;
+    color: white;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    font-size: 22px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
 
 /* FOOTER */
 

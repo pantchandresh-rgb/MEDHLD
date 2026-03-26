@@ -158,60 +158,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("bookingForm");
 
-    if (form) {
-        form.addEventListener("submit", function (e) {
+if (form) {
+    form.addEventListener("submit", function (e) {
 
-            e.preventDefault();
+        e.preventDefault();
 
-            let name = document.getElementById("name")?.value;
-            let phone = document.getElementById("phone")?.value;
-            let city = document.getElementById("city")?.value;
-            let selectedService = document.getElementById("service")?.value;
-            let date = document.getElementById("date")?.value;
-            let time = document.getElementById("time")?.value;
-            // ✅ NEW FIELDS
+        let name = document.getElementById("name")?.value;
+        let phone = document.getElementById("phone")?.value;
+        let city = document.getElementById("city")?.value;
+        let selectedService = document.getElementById("service")?.value;
+        let date = document.getElementById("date")?.value;
+        let time = document.getElementById("time")?.value;
         let area = document.getElementById("area")?.value;
         let address = document.getElementById("address")?.value;
         let notes = document.getElementById("notes")?.value;
 
+        if (!name || !phone || !city || !area || !address || !selectedService) {
+            alert("Please fill all required fields");
+            return;
+        }
 
+        let assignedNumber = getTechnician(city, area, selectedService);
 
-            if (!name || !phone || !city || !selectedService) {
-                alert("Please fill all required fields");
-                return;
-            }
+        if (!assignedNumber) {
+            assignedNumber = "919818185270";
+        }
 
-            let assignedNumber = getTechnician(city, area, selectedService);
-
-            if (!assignedNumber) {
-                assignedNumber = "919818185270";
-            }
-		
-	       
-            	
-            let message = `🩺 *New Booking Request*
+        let message = `🩺 *New Booking Request*
 
 👤 Name: ${name}
 📞 Phone: ${phone}
-📍 Location: ${city}
+📍 City: ${city}
+📌 Area: ${area}
+🏠 Address: ${address}
 💉 Service: ${selectedService}
 📅 Date: ${date}
 ⏰ Time: ${time}
-📌 Area: ${area}
-🏠 Address: ${address}
-📝 Notes: ${notes || "N/A"}`;
+📝 Notes: ${notes || "N/A"}
 
-            let whatsappURL = `https://wa.me/${assignedNumber}?text=${encodeURIComponent(message)}`;
+🚀 Requested via: Website Booking Form`;
 
-            window.open(whatsappURL, "_blank");
+        let whatsappURL = `https://wa.me/${assignedNumber}?text=${encodeURIComponent(message)}`;
 
-            alert("Booking sent successfully!");
+        window.open(whatsappURL, "_blank");
 
-            form.reset();
+        form.reset();
+
+        document.querySelectorAll("input, select, textarea").forEach(el => {
+            el.value = "";
         });
-    }
 
-    // ============================================
+        alert("Booking sent successfully!");
+
+    });
+}
+ 
+
+
+   // ============================================
     // 🎞️ HERO SLIDER (FIXED)
     // ============================================
 let slides = document.querySelectorAll(".slide");
@@ -247,6 +251,15 @@ if (slides.length > 0) {
         dateInput.setAttribute("min", today);
     }
 
+     
+    form.reset();
+
+// force clear (extra safety)
+document.querySelectorAll("input, select, textarea").forEach(el => {
+    el.value = "";
+});
+
+
     // ============================================
     // 📱 PHONE VALIDATION
     // ============================================
@@ -279,4 +292,11 @@ function calculatePrice() {
 
     document.getElementById("estimateResult").innerHTML =
         "💰 Estimated Price: <strong>₹" + total + "</strong>";
+
+form.reset();
+
+// force clear (extra safety)
+document.querySelectorAll("input, select, textarea").forEach(el => {
+    el.value = "";
+});
 }
