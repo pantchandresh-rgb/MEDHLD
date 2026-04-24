@@ -150,45 +150,30 @@ function getTechnician(city, area, selectedService) {
 // 🚀 MAIN
 // ============================================
 
-document.addEventListener("DOMContentLoaded", function () {
+
 
     // ============================================
     // 📩 BOOKING FORM
     // ============================================
 
-    const form = document.getElementById("bookingForm");
+    document.addEventListener("DOMContentLoaded", function (e	document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-if (form) {
-    form.addEventListener("submit", function (e) {
+    let name = document.getElementById("name").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let area = document.getElementById("area").value;
+    let address = document.getElementById("address").value.trim();
+    let selectedService = document.getElementById("service").value;
 
-        e.preventDefault();
-
-        let name = document.getElementById("name")?.value;
-        let phone = document.getElementById("phone")?.value;
-        let city = document.getElementById("city")?.value;
-        let selectedService = document.getElementById("service")?.value;
-        let date = document.getElementById("date")?.value;
-        let time = document.getElementById("time")?.value;
-        let area = document.getElementById("area")?.value;
-        let address = document.getElementById("address")?.value;
-        let notes = document.getElementById("notes")?.value;
-
-        if (!name || !phone || !city || !area || !address || !selectedService) {
-            alert("Please fill all required fields");
-            return;
-        }
-
-        let assignedNumber = getTechnician(city, area, selectedService);
-
-        if (!assignedNumber) {
-            assignedNumber = "919818185270";
-        }
+        if (!name || !phone || !selectedService || !area || !address) {
+    alert("Please fill all fields");
+    return;
+}
 
         let message = `🩺 *New Booking Request*
 
 👤 Name: ${name}
 📞 Phone: ${phone}
-📍 City: ${city}
 📌 Area: ${area}
 🏠 Address: ${address}
 💉 Service: ${selectedService}
@@ -278,25 +263,23 @@ document.querySelectorAll("input, select, textarea").forEach(el => {
 // 💰 PRICE CALCULATOR (GLOBAL)
 // ============================================
 
-function calculatePrice() {
+const calcBtn = document.getElementById("calcBtn");
 
-    let servicePrice = document.getElementById("estService")?.value;
-    let urgency = document.getElementById("urgency")?.value;
+if (calcBtn) {
+    calcBtn.addEventListener("click", function () {
 
-    if (!servicePrice) {
-        alert("Please select a service");
-        return;
-    }
+        let servicePrice = document.getElementById("estService").value;
+        let urgency = document.getElementById("urgency").value;
 
-    let total = Math.round(servicePrice * urgency);
+        if (!servicePrice || !urgency) {
+            alert("Please select all options");
+            return;
+        }
 
-    document.getElementById("estimateResult").innerHTML =
-        "💰 Estimated Price: <strong>₹" + total + "</strong>";
+        let total = Math.round(servicePrice * urgency);
 
-form.reset();
+        document.getElementById("estimateResult").innerHTML =
+            "💰 Estimated Price: ₹" + total;
 
-// force clear (extra safety)
-document.querySelectorAll("input, select, textarea").forEach(el => {
-    el.value = "";
-});
+    });
 }

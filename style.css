@@ -24,12 +24,23 @@ body {
 }
 
 /* HERO */
+
+.hero {
+    position: relative;
+}
+
+
+.hero {
+    background: linear-gradient(135deg, #f5f9ff, #eaf3ff);
+}
+
+
 .hero {
     display: flex;
-    gap: 40px;
-    padding: 80px 8%;
     align-items: center;
-    flex-wrap: wrap; /* IMPORTANT FIX */
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
 .trust-strip {
@@ -40,10 +51,18 @@ body {
     font-size: 14px;
 }
 
+
+.hero-btn {
+    padding: 16px 28px;
+    font-size: 16px;
+}
+
 .hero-time {
     margin-top: 10px;
     font-weight: 600;
     color: #0077ff;
+    text-align: center;   /* ADD THIS */
+    display: block;
 }
 
 .hero-content {
@@ -55,6 +74,23 @@ body {
     font-size: 48px;
     line-height: 1.2;
 }
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;   /* IMPORTANT */
+    object-fit: cover;
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+}
+
 
 .slider {
     flex: 1;
@@ -443,6 +479,21 @@ p, li {
     transition: 0.2s;
 }
 
+select {
+    height: 45px;
+    padding: 0 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background: white;
+}
+
+select:focus {
+    border-color: #0077ff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,119,255,0.1);
+}
+
 .booking-form input:focus,
 .booking-form select:focus {
     border-color: #0077ff;
@@ -649,6 +700,30 @@ p, li {
     font-size: 13px;
     color: #aaa;
 }
+
+.mobile-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+}
+
+.mobile-bar a {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    color: white;
+    font-weight: 600;
+}
+
+.mobile-bar a:first-child {
+    background: #0077ff;
+}
+
+.mobile-bar a:last-child {
+    background: #25D366;
+}
+
 
 @media (max-width: 900px) {
     .three-column-section {
